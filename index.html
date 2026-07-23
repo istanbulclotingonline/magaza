@@ -472,7 +472,7 @@ const imgs=sadeceFoto.length?sadeceFoto:tumMedya;
 
         <div class="label">Size (EU)</div>
         <div class="sizes">
-          ${(p.bedenler||[]).map(b=>`<div class="size-opt ${PD.size===b?'active':''}" onclick="setSize(${b})">${b}</div>`).join('')||'<span style="color:var(--muted)">Contact us</span>'}
+          ${(p.bedenler||[]).map(b=>`<div class="size-opt ${PD.size===b?'active':''}" onclick="setSize('${b}')">${b}</div>`).join('')||'<span style="color:var(--muted)">Contact us</span>'}
         </div>
 
         <button class="btn btn-primary" id="addBtn" ${PD.size?'':'disabled'} onclick="addToCart()">
