@@ -423,7 +423,9 @@ function closePD(){$('pdOverlay').classList.remove('open');document.body.style.o
 function renderPD(){
   const p=PD.product;
   const color=p.renkler[PD.color];
-  const imgs=(color.gorseller||[]);
+  const tumMedya=(color.gorseller||[]);
+const sadeceFoto=tumMedya.filter(g=>!/\.(mp4|mov)($|\?)/i.test(g));
+const imgs=sadeceFoto.length?sadeceFoto:tumMedya;
   const mainSrc=imgs[PD.img]||imgs[0]||'';
   const isVid=/\.mp4($|\?)/i.test(mainSrc);
   const gender=(p.cinsiyet||[]).length===2?'Unisex':(p.cinsiyet||[])[0]||'';
